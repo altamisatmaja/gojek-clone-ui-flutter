@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_svg: ^2.0.9
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +18,17 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/images
+    - assets/icons
+
+  fonts:
+  - family: SF-Pro-Display
+    fonts:
+      - asset: assets/fonts/SF-Pro-Display-Regular.OTF
+      - asset: assets/fonts/SF-Pro-Display-Semibold.OTF
+        # weight: 600
+      - asset: assets/fonts/SF-Pro-Display-Bold.OTF
+        # weight: 700
+
