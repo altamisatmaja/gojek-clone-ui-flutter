@@ -47,7 +47,33 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container()
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  SizedBox(
+                    width: 35,
+                    height: 35,
+                    child: Stack(children: [
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(35 / 2)),
+                        clipBehavior: Clip.hardEdge,
+                        child: Image.asset('assets/images/avatar.png'),
+                      ),
+                      Positioned(
+                        right: 0,
+                        bottom: 0,
+                          child: Container(
+                            width: 16,
+                            height: 16,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(35 / 2),
+                          color: const Color(0xFFD1E7EE),
+                        ), clipBehavior: Clip.hardEdge,
+                        child: SvgPicture.asset('assets/icons/goclup.svg',),
+                      ))
+                    ]),
+                  )
                 ],
               ),
             ),
