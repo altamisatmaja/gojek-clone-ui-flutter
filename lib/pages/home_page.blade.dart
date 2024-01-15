@@ -197,6 +197,47 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(left: 27, right: 27, top: 32),
+              child: SizedBox(
+                  height: 157,
+                  child: GridView.count(
+                    crossAxisCount: 4,
+                    mainAxisSpacing: 2,
+                    children: [
+                      ...menuIcons.map((icon) => Container(
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: 40,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: icon.icon == 'goclub'
+                                          ? Colors.white
+                                          : icon.color,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child:
+                                      SvgPicture.asset('icons/${icon.icon}.svg',
+                                          width: 24,
+                                          color: icon.icon == 'goclub'
+                                              ? icon.color
+                                              : icon.icon == 'other'
+                                                  ? dark2
+                                                  : Colors.white),
+                                ),
+                                const SizedBox(
+                                  height: 9,
+                                ),
+                                Text(
+                                  icon.title,
+                                  style: regular12_5.copyWith(color: dark2),
+                                ),
+                              ],
+                            ),
+                          ))
+                    ],
+                  )),
+            )
           ],
         ),
       ),
