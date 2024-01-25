@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gojekcloneapp/components/header.blade.dart';
 import 'package:gojekcloneapp/data/icons.blade.dart';
+import 'package:gojekcloneapp/data/news.blade.dart';
 import 'package:gojekcloneapp/theme.blade.dart';
 
 class HomePage extends StatelessWidget {
@@ -382,7 +383,62 @@ class HomePage extends StatelessWidget {
                   )
                 ],
               ),
-            )
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 32, right: 20, left: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    'images/gopaylater.png',
+                    height: 14,
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Text(
+                    'Lebih hemat pake GoPayLater 🤩',
+                    style: bold16.copyWith(color: dark1),
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Text(
+                    'Yuk, belanja di Tokopedia pake GoPay Later dan nikmatin cashback-nya~',
+                    style: regular14.copyWith(color: dark2),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            ...news.map((item) => Container(
+                  padding:
+                      const EdgeInsets.only(bottom: 24, left: 16, right: 16),
+                  child: Container(
+                    clipBehavior: Clip.hardEdge,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        border: Border.all(color: dark4)),
+                    child: Column(
+                      children: [
+                        Image.asset('images/${item.image}'),
+                        Padding(
+                          padding: const EdgeInsets.all(25),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(item.title, style: bold16.copyWith(color: dark1),),
+                              const SizedBox(height: 8,),
+                              Text(item.description, style: regular14.copyWith(color: dark2),)
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ))
           ],
         ),
       ),
